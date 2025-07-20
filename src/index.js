@@ -23,9 +23,8 @@ form.addEventListener("submit", (e) => {
   const attendance = new Attendance(
     parseInt(presentSlots),
     parseInt(totalSlots),
-    parseInt(goal)
-  )
-  
+    parseInt(goal),
+  );
+
   ui.renderOutput(attendance);
-  
 });

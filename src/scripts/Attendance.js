@@ -16,7 +16,7 @@ export default class Attendance {
   updateAttendance(newPresent, newTotal) {
     this.current = [newPresent, newTotal];
   }
-  
+
   resetUpdated() {
     this.current[0] = this.initial[0];
     this.current[1] = this.initial[1];
@@ -36,13 +36,13 @@ export default class Attendance {
     }
     return skipped - 1;
   }
-  
+
   getNeedToAttend(fromArr = this.initial) {
     let attended = 0;
     let present = fromArr[0];
     let total = fromArr[1];
     while ((present / total) * 100 < this.goal) {
-      present++
+      present++;
       total++;
       attended++;
     }

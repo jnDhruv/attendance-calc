@@ -14,7 +14,11 @@ body {
 
 body {
   font-family: Roboto;
-  background-image: linear-gradient(to top, var(--bg-gradient-dark) 0%, var(--bg-gradient-light) 100%);
+  background-image: linear-gradient(
+    to top,
+    var(--bg-gradient-dark) 0%,
+    var(--bg-gradient-light) 100%
+  );
   background-repeat: no-repeat;
   min-height: 100vh;
   place-content: center;
