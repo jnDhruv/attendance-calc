@@ -3,14 +3,18 @@ export default class Attendance {
     this.initial = [presentSlots, totalSlots];
     this.current = [presentSlots, totalSlots];
     this.goal = goal;
+    this.addedAbsents = 0;
+    this.addedPresents = 0;
   }
 
   attendSlots(x = 1) {
     this.updateAttendance(this.current[0] + x, this.current[1] + x);
+    this.addedPresents += x;
   }
 
   missSlots(x = 1) {
     this.updateAttendance(this.current[0], this.current[1] + x);
+    this.addedAbsents += x;
   }
 
   updateAttendance(newPresent, newTotal) {
@@ -20,6 +24,8 @@ export default class Attendance {
   resetUpdated() {
     this.current[0] = this.initial[0];
     this.current[1] = this.initial[1];
+    this.addedAbsents = 0;
+    this.addedPresents = 0;
   }
 
   getPercentage(fromArr = this.current) {
