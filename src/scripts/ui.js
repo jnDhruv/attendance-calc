@@ -94,15 +94,15 @@ const UIController = () => {
     simulator.append(addAbsent, addPresent, resetButton);
 
     if (isSimulated) {
-      const currPresent = createPara(
-        `Present: ${attendance.current[0]}`,
+      const addedAbs = createPara(
+        `Absents added: ${attendance.addedAbsents}`,
         "sim-stats",
       );
-      const currTotal = createPara(
-        `Total: ${attendance.current[1]}`,
+      const addedPre = createPara(
+        `Presents added: ${attendance.addedPresents}`,
         "sim-stats",
       );
-      simulator.append(currPresent, currTotal);
+      simulator.append(addedAbs, addedPre);
     }
 
     output.append(titleH3, percentH1, progressOuter, msgH3, simulator);
