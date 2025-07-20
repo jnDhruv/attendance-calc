@@ -1,0 +1,53 @@
+:root {
+  --box-shadow-color: rgba(0, 0, 0, 0.5);
+  --box-bg-color: #f8f9f3;
+  --accent-bg-color: #c2dfe3;
+}
+
+form {
+  box-shadow: 0 0 10px var(--box-shadow-color);
+  padding: 20px;
+  border-radius: 20px;
+  width: 80%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: var(--box-bg-color);
+
+  & input[type="number"] {
+    display: block;
+    border-radius: 4px;
+    border: 1px solid var(--bg-gradient-dark);
+
+    padding: 4px 2px;
+  }
+
+  & div + div {
+    margin-top: 20px;
+  }
+
+  & div:has(input[type="submit"]) {
+    display: flex;
+    justify-content: center;
+
+    & input {
+      font-family: inherit;
+      font-size: 100%;
+      border-radius: 8px;
+      padding: 5px 10px;
+      border: none;
+      background-color: var(--accent-bg-color);
+      color: var(--bg-gradient-light);
+      font-weight: bold;
+      cursor: pointer;
+
+      transition: box-shadow 0.15s;
+
+      &:hover {
+        box-shadow: 0 0 5px #022b3a5f;
+      }
+    }
+  }
+}
