@@ -15,7 +15,9 @@ form.addEventListener("submit", (e) => {
   let goal = document.getElementById("goal").value;
   e.preventDefault();
 
-  if (!validateInput(presentSlots, totalSlots, goal)) {
+  if (
+    !validateInput(parseInt(presentSlots), parseInt(totalSlots), parseInt(goal))
+  ) {
     return;
   }
 
@@ -30,7 +32,7 @@ form.addEventListener("submit", (e) => {
 
 function validateInput(presentSlots, totalSlots, goal) {
   // goal set to 100 but can't be reached
-  if (goal == 100 && presentSlots != totalSlots) {
+  if (goal === 100 && presentSlots !== totalSlots) {
     alert("You can't hit 100% unless you've attended every class!");
     return false;
   }
