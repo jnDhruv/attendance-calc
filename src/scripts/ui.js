@@ -31,7 +31,12 @@ const UIController = () => {
     const progressOuter = createDiv("", "progress-bar-outer");
     const progressInner = createDiv("", "progress-bar-inner");
 
-    progressInner.style.width = `${percentage}%`;
+    progressInner.style.width = isSimulated
+      ? `${attendance.getPercentage()}%`
+      : "0%";
+    setTimeout(() => {
+      progressInner.style.width = `${percentage}%`;
+    }, 50);
     progressInner.style.backgroundColor = msgColor;
     progressOuter.appendChild(progressInner);
 
@@ -101,7 +106,15 @@ const UIController = () => {
     }
 
     output.append(titleH3, percentH1, progressOuter, msgH3, simulator);
-    container.append(output);
+    if (isSimulated) {
+      // do not animate entrance of output
+      // if its a simulation
+      // i.e. output box is already rendered and only % is changed.
+      output.classList.add("show");
+      container.append(output);
+    } else {
+      animateIn(output, container);
+    }
   }
 
   function clearOutput() {
@@ -150,6 +163,11 @@ function applyClasses(element, classes) {
       element.classList.add(temp);
     });
   }
+}
+
+function animateIn(elem, parent) {
+  parent.appendChild(elem);
+  setTimeout(() => elem.classList.add("show"), 50);
 }
 
 export default UIController();
