@@ -19,6 +19,10 @@ form.addEventListener("submit", (e) => {
     alert("You will never reach your goal.");
     return;
   }
+  if (presentSlots > totalSlots) {
+    alert("Whoa! You can't attend more classes than exist!");
+    return;
+  }
 
   const attendance = new Attendance(
     parseInt(presentSlots),
