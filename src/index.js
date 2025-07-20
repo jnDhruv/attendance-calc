@@ -15,6 +15,11 @@ form.addEventListener("submit", (e) => {
   let goal = document.getElementById("goal").value;
   e.preventDefault();
 
+  if (goal == 100 && presentSlots != totalSlots) {
+    alert("You will never reach your goal.");
+    return;
+  }
+
   const attendance = new Attendance(
     parseInt(presentSlots),
     parseInt(totalSlots),
