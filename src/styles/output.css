@@ -1,3 +1,10 @@
+:root {
+  --validation-false-color: #ed6a5a;
+  --validation-true-color: #276b65;
+  --validation-false-bg-color: #ed6a5a;
+  --validation-true-bg-color: #84dccf;
+}
+
 .output {
   margin-top: 20px;
   box-shadow: 0 0 10px var(--box-shadow-color);
@@ -64,11 +71,11 @@ h3 {
 }
 
 .present-buttons button {
-  background-color: #84dccf;
+  background-color: var(--validation-true-bg-color);
 }
 
 .absent-buttons button {
-  background-color: #ed6a5a;
+  background-color: var(--validation-false-bg-color);
 }
 
 .sim-reset {

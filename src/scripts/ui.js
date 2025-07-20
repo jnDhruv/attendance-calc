@@ -16,10 +16,10 @@ const UIController = () => {
     let msgColor, descMsg;
 
     if (percentage < goal) {
-      msgColor = "red";
+      msgColor = "var(--validation-false-color)";
       descMsg = `You need to attend ${attendance.getNeedToAttend(source)} more classes!`;
     } else {
-      msgColor = "green";
+      msgColor = "var(--validation-true-color)";
       descMsg = `Great! You can miss ${attendance.getCanBeMissed(source)} classes and still keep up.`;
     }
     const percentH1 = createHeading(`${percentage}%`, "h1");
